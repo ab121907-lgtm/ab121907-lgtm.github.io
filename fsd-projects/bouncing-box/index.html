@@ -2,13 +2,13 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <title>Bouncing Box</title>
+    <title>Aaron's Bouncing Box</title>
     <script src="jquery.min.js"></script>
     <style>
       .box {
         width: 70px;
         height: 70px;
-        background-color: teal;
+        background-color: rgb(226, 209, 16);
         font-size: 300%;
         text-align: center;
         user-select: none;
@@ -69,6 +69,10 @@
         //////////////////////////////////////////////////////////////////
 
         // TODO 2 - Variable declarations
+        var positionX = 0;
+        var points = 0;
+        var speed = 10;
+
 
 
 
@@ -81,10 +85,22 @@
          */
         function update() {
           moveBoxTo(200); // Moves box to x-position 200
+          moveBoxTo(450); // Moves box to x-position 450
+          moveBoxTo(positionX); // Moves box to x-position 30
+          positionX = positionX + speed;
+          if (positionX > boardWidth) {
+          speed *= -1;
+  // Code to reverse speed goes here
+  }  
+          else if (positionX < 0) {
+            speed *= -1;
+  // Code to reverse speed goes here
+}
+
 
         
 
-          
+      
         }
 
         /**
@@ -95,7 +111,11 @@
          * - move the box to the left side of the screen.
          */
         function handleBoxClick() {
-
+          positionX = 0;
+          changeBoxText(points)
+          points++;
+          speed = 3 * points + 10;
+          
 
 
 
