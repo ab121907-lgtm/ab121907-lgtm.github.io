@@ -40,10 +40,15 @@ var init = function (window) {
          drawCircle();
          drawCircle();
          drawCircle();
+         drawCircle();
+         drawCircle();
+         drawCircle();
+         drawCircle();
+         drawCircle();
 
 
         // TODO 7 : Use a loop to create multiple circles
-        for (var i = 0; i < 25; i++) {
+          for (var i = 0; i < 50; i++) {
  
 }   
 
@@ -65,6 +70,11 @@ var init = function (window) {
            physikz.updatePosition(circles[2]);
            physikz.updatePosition(circles[3]);
            physikz.updatePosition(circles[4]);
+           physikz.updatePosition(circles[5]);
+           physikz.updatePosition(circles[6]);
+           physikz.updatePosition(circles[7]);
+           physikz.updatePosition(circles[8]);
+           physikz.updatePosition(circles[9]);
 
             // TODO 5 : Call game.checkCirclePosition() on your circles
            game.checkCirclePosition(circles[0]);
@@ -72,9 +82,16 @@ var init = function (window) {
            game.checkCirclePosition(circles[2]);
            game.checkCirclePosition(circles[3]);
            game.checkCirclePosition(circles[4]);
+          game.checkCirclePosition(circles[5]);
+          game.checkCirclePosition(circles[6]);
+          game.checkCirclePosition(circles[7]);
+          game.checkCirclePosition(circles[8]);
+          game.checkCirclePosition(circles[9]);
 
             // TODO 8 / TODO 9 : Iterate over the array
-           
+           for (var i = 0; i < circles.length; i++) {
+  
+}
             
         }
     
@@ -91,8 +108,10 @@ var init = function (window) {
             }
             
             // TODO 6 : YOUR CODE STARTS HERE //////////////////////
-            
-
+            if (circle.y > canvas.height ) {
+                circle.y = 0;
+            }
+            var rightEdge = circle.x + circle.radius;
 
             // YOUR TODO 6 CODE ENDS HERE //////////////////////////
         }
